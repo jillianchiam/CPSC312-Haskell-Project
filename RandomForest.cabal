@@ -1,0 +1,27 @@
+Name:               RandomForest
+Version:            0.1
+Synopsis:           Audio/visualization for solar systems.
+
+License:            BSD3
+License-file:       license
+Author:             Jillian Chiam
+Copyright:          (c) Jillian Chiam 2021
+
+build-type:         Simple
+cabal-version:      >= 1.6
+
+executable RandomForest
+    main-is:        Main.hs
+    build-depends:  base,
+                    aeson,
+                    attoparsec,
+                    bytestring,
+                    ghc-prim,
+                    random,
+                    random-extras,
+                    random-fu,
+                    random-source,
+                    containers,
+                    text,
+                    utf8-string,
+                    split
