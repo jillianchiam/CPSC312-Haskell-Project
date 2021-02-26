@@ -27,6 +27,7 @@ main = do
        Right (h, v) -> do       
            putStrLn $ show h    --produce header of columns
            V.forM_ v $ \ p ->   -- print the data
-                print (test_date p, cough p, fever p, sore_throat p, shortness_of_breath p, head_ache p, corona_result p, age_60_and_above p, gender p, test_indication p)
+                print (test_date p, cough p, fever p, sore_throat p, shortness_of_breath p, head_ache p, changeString(corona_result p), changeString2(age_60_and_above p), changeString(gender p), changeString2(test_indication p))
+
 
 
