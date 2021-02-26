@@ -2,5 +2,5 @@ test_date,cough,fever,sore_throat,shortness_of_breath,head_ache,corona_result,ag
 4/30/2020,0,0,0,0,0,negative,None,female,Other
 4/30/2020,1,0,0,0,0,negative,None,female,Other
 4/30/2020,0,1,0,0,0,negative,None,male,Other
-4/30/2020,1,0,0,0,0,negative,None,female,Other
+4/30/2020,1,0,0,0,0,positive,None,female,Other
 4/30/2020,1,0,0,0,0,negative,None,male,Other
