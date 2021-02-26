@@ -63,3 +63,20 @@ instance DefaultOrdered Person where
 --    parseField = parseTimeM True defaultTimeLocale "%d/%m/%Y" . show
 
 
+--changes the following columns:
+-- corona_result : positive = 1 ; negative = 0
+-- gender       : female = 1 ; male = 0
+changeString :: String -> Int
+changeString x = if (x == "positive" || x == "female") 
+                    then 1
+                    else 0
+
+--changes the following columns:
+-- age_60_and_above : Yes = 1 ; No = 0 ; None = 0
+-- test_indication  : Other = 0 ; Abroad = 1 ; Contact with confirmed = 1
+changeString2 :: String -> Int
+changeString2 x = if (x == "Yes" || x == "Abroad" || x == "Contact with confirmed") 
+                    then 1
+                    else 0
+
+
