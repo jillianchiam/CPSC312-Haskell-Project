@@ -7,11 +7,15 @@ import qualified Data.ByteString.Lazy as BL
 -- text
 import Data.Text (Text)
 import qualified Data.Text.Encoding as Text
+import Data.List.Split
 
 import Data.Csv
 import qualified Data.Csv as Cassava
 --vector
 import qualified Data.Vector as V
+import Data.Matrix as MT
+
+
 
 -- !Int == Strictly type Int ; !String == strictly type String
 data Person = Person
@@ -37,6 +41,7 @@ instance FromNamedRecord Person where
         <*> p .: "gender_male1_female0"
         <*> p .: "corona_result"
 
+
 --Gives the csv a header when printed
 instance DefaultOrdered Person where
   headerOrder _ =
@@ -53,7 +58,6 @@ instance DefaultOrdered Person where
 
 --instance FromField Data.Time.Day where
 --    parseField = parseTimeM True defaultTimeLocale "%d/%m/%Y" . show
-
 
 --changes the following columns:
 -- corona_result : positive = 1 ; negative = 0
@@ -83,6 +87,5 @@ runCSV = do
             putStrLn $ show h    --produce header of columns
             V.forM_ v $ \ p ->   -- print the data
                 print (cough p, fever p, sore_throat p, shortness_of_breath p, head_ache p, age_60_and_above p, gender_male1_female0 p, corona_result p)
-
 
 
