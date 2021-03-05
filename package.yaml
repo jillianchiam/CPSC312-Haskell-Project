@@ -39,6 +39,10 @@ executables:
     - text
     - cassava
     - time
+    - bytestring
+    - vector
+    - split
+    - random
 
 tests:
   project312-test:
@@ -54,3 +58,7 @@ tests:
     - text
     - cassava
     - time
+    - bytestring
+    - vector
+    - split
+    - random

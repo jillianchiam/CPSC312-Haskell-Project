@@ -53,6 +53,10 @@ executable project312-exe
     , bytestring
     , vector
     , time
+    , split
+    , csv
+    , matrix
+    , random
   default-language: Haskell2010
 
 test-suite project312-test
@@ -72,4 +76,8 @@ test-suite project312-test
     , bytestring
     , vector
     , time
+    , split
+    , csv
+    , matrix
+    , random
   default-language: Haskell2010
