@@ -18,6 +18,7 @@ import Data.Matrix as MT
 
 
 -- !Int == Strictly type Int ; !String == strictly type String
+-- define the data types to represent a Person
 data Person = Person
     {cough  :: !Int
     , fever  :: !Int
@@ -29,6 +30,7 @@ data Person = Person
     , corona_result :: !Int
     }
 
+-- decode by parsing a CSV row and how to assemble the parsed values
 instance FromNamedRecord Person where
     parseNamedRecord p = pure Person
         Person 
@@ -74,6 +76,7 @@ instance DefaultOrdered Person where
 --                    then 1
 --                    else 0
 
+--changes the values of Person into a list of Integers
 valuesToList :: Person -> [Int]
 valuesToList (Person c1 c2 c3 c4 c5 c6 c7 c8) = [c1, c2, c3, c4, c5, c6, c7, c8]
 

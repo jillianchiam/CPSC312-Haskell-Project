@@ -40,7 +40,7 @@ bestSplit m =
         purityCompare = V.map (\x -> if isNaN x == True then 1 else x) $ V.map (\x -> splitOnVar x m) (V.enumFromN 1 (MT.ncols m - 1))
         
 
--- Splits a matrix on the predictor given by bestSplit, then removes that predictor, resulting in two matrices, each with one less predictor than before. Also returns the removed predictor.
+-- Accumulator function for doBestSplit
 doBestSplitAccum :: (Eq a, Num a) => Matrix a -> [[a]] -> [[a]] -> [Int] -> ([Matrix a], Int)
 doBestSplitAccum m accOnes accZeros [] = ([MT.fromLists accOnes, MT.fromLists accZeros], best) where best = bestSplit m       
 doBestSplitAccum m accOnes accZeros (x:xs) = 
@@ -53,6 +53,7 @@ doBestSplitAccum m accOnes accZeros (x:xs) =
         thisRow = MT.getRow x m
 
 
+-- Splits a matrix on the predictor given by bestSplit, then removes that predictor, resulting in two matrices, each with one less predictor than before. Also returns the removed predictor.
 doBestSplit :: (Eq a, Num a) => Matrix a -> ([Matrix a], Int)
 doBestSplit m = doBestSplitAccum m [] [] (V.toList $ V.enumFromN 1 (MT.nrows m))
 
